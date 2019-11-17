@@ -1,3 +1,4 @@
 .stack-work/
 tequila.cabal
 *~
+stack.yaml.lock
