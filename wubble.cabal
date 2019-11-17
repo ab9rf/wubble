@@ -1,0 +1,75 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 6d0c61a70109c6c05ac305632352596df7ab41ff35a8264574185b90926c70a7
+
+name:           wubble
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/ab9rf/wubble#readme>
+homepage:       https://github.com/ab9rf/wubble#readme
+bug-reports:    https://github.com/ab9rf/wubble/issues
+author:         Kelly Kinkade
+maintainer:     kmartin@pyrzqxgl.org
+copyright:      unspecified
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/ab9rf/wubble
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_wubble
+  hs-source-dirs:
+      src
+  default-extensions: DataKinds FlexibleContexts GADTs LambdaCase PolyKinds RankNTypes ScopedTypeVariables TypeApplications TypeOperators TypeFamilies
+  ghc-options: -O2 -flate-specialise -fspecialise-aggressively
+  build-depends:
+      base >=4.7 && <5
+    , polysemy >=1.0
+    , polysemy-sdl >=0.0.1
+    , sdl2 >=2.2.0
+  default-language: Haskell2010
+
+executable wubble-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_wubble
+  hs-source-dirs:
+      app
+  default-extensions: DataKinds FlexibleContexts GADTs LambdaCase PolyKinds RankNTypes ScopedTypeVariables TypeApplications TypeOperators TypeFamilies
+  ghc-options: -O2 -flate-specialise -fspecialise-aggressively -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , polysemy >=1.0
+    , polysemy-sdl >=0.0.1
+    , sdl2 >=2.2.0
+    , wubble
+  default-language: Haskell2010
+
+test-suite wubble-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_wubble
+  hs-source-dirs:
+      test
+  default-extensions: DataKinds FlexibleContexts GADTs LambdaCase PolyKinds RankNTypes ScopedTypeVariables TypeApplications TypeOperators TypeFamilies
+  ghc-options: -O2 -flate-specialise -fspecialise-aggressively -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , polysemy >=1.0
+    , polysemy-sdl >=0.0.1
+    , sdl2 >=2.2.0
+    , wubble
+  default-language: Haskell2010
